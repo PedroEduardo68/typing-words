@@ -35,11 +35,37 @@ const App = () => {
 
   const [getTypedKeys, setTypedKeys] = useState([]);
   const [getValidKeys, setValidKeys] = useState([]);
+  const [getcompletedWords, setcompletedWords] = useState([]);
   const [getWord, setWord] = useState('');
 
   useEffect(()=>{
     setWord(getWordFile());
   }, [])
+
+
+  useEffect(()=>{
+    const wordFromValidKeys =  getValidKeys.join("").toLowerCase();
+    if (getWord && getWord === wordFromValidKeys){
+      //adidcionar word ao ccompledwords
+      //limpara o array do validkeys
+      //buscar uma nova palavra
+      //ccompledwords 
+
+      let newWord = null;
+      do{
+        newWord = getWordFile();
+      }while(getcompletedWords.includes(newWord))
+
+      setWord(newWord);
+
+      setValidKeys([]);
+      setcompletedWords((prev)=>[...prev, getWord])
+
+
+
+    }
+  }, [getWord, getValidKeys, getcompletedWords])
+
 
 
   const handleKeyDown = (e) =>{
@@ -81,8 +107,9 @@ const App = () => {
     <div className="typed-keys">{getTypedKeys}</div>
     <div className="completed-words">
       <ol>
-        <li>teste</li>
-        <li>teste</li>
+        {getcompletedWords.map((getWord)=>{
+          return <li key={getWord} >{getWord}</li>
+        })}
       </ol>
     </div>
   </div>
