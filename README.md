@@ -29,7 +29,7 @@
 
 
 <p align="center">
-Feito por Time da Pedro Eduardo Camera<br />
+Feito por Pedro Eduardo Camera<br />
 👋🏽 Entre em contato! <br />
 
 </p>
