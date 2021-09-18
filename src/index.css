@@ -9,8 +9,8 @@
 body {
   width: "100%";
   min-height: 100vh;
-  color: #e1e1e1;
-  background-color: #1e1e1e;
+  color: #daeb41;
+  background-color: #120868;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,11 +31,11 @@ body {
   font-size: 10rem;
   font-weight: bold;
   min-width: 600px;
-  border-bottom: solid 2px #ffffff;
+  border-bottom: solid 2px #63d2ee;
 }
 
 .container .valid-keys .matched{
-  background-color: #fdf8c5;
+  background-color: #cc2121;
   color: #282c34;
 
 }
